@@ -1,0 +1,58 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "name": "khulnasoft",
+  "type": "datasource",
+  "id": "khulnasoft-datasource",
+  "metrics": true,
+  "info": {
+    "description": "khulnasoft datasource plugin",
+    "author": {
+      "name": "Khulnasoft",
+      "url": "https://www.khulnasoft.com"
+    },
+    "keywords": ["khulnasoft", "datasource", "plugin"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/khulnasoft/khulnasoft-grafana-datasource-plugin"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/khulnasoft/khulnasoft-grafana-datasource-plugin/blob/master/LICENSE"
+      }
+    ],
+    "screenshots": [
+      {
+        "name": "main",
+        "path": "img/screenshot.png"
+      }
+    ],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "routes": [
+    {
+      "path": "base",
+      "url": "https://app.khulnasoft.com/api",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "content": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "content": "Bearer {{ .SecureJsonData.apiToken }}"
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "grafanaDependency": ">=7.1.0",
+    "grafanaVersion": "7.1.x",
+    "plugins": []
+  }
+}
