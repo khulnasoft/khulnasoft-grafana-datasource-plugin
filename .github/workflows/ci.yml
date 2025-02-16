@@ -84,7 +84,7 @@ jobs:
           zip "khulnasoft-datasource-${{ steps.build_environment.outputs.BUILD_VERSION }}.zip" khulnasoft-datasource -r
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: khulnasoft-datasource-${{ steps.build_environment.outputs.BUILD_VERSION }}.zip
           path: ./khulnasoft-datasource-${{ steps.build_environment.outputs.BUILD_VERSION }}.zip
