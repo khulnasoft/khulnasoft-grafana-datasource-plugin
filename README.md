@@ -1,1 +1,0 @@
-# khulnasoft-grafana-datasource-plugin
